@@ -9,7 +9,7 @@ using EH.StringValidation.Abstraction;
 using System.Reflection;
 namespace EH.DeobfuscationProcesses;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "StringDecryption")]
-public class EhStringDecryptionProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
+public class EhStringDecryptionProcess(IEhLogger logger) : EhBaseDeobfuscationProcess
 {
     protected override void Deobfuscate(ModuleDefMD module)
     {
