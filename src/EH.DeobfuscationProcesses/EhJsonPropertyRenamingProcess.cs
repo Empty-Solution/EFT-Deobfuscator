@@ -8,7 +8,7 @@ using EH.StringValidation.Abstraction;
 using System.Linq;
 namespace EH.DeobfuscationProcesses;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "sonProperty")]
-public class EhJsonPropertyDeobfuscationProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
+public class EhJsonPropertyRenamingProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
 {
     protected override void Deobfuscate(ModuleDefMD module)
     {

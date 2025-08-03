@@ -7,7 +7,7 @@ using EH.Logging.Abstraction;
 using EH.StringValidation.Abstraction;
 namespace EH.DeobfuscationProcesses;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "FieldName")]
-public class EhFieldNameDeobfuscationProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
+public class EhFieldNameRenamingProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
 {
     protected override void Deobfuscate(ModuleDefMD module)
     {
