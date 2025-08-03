@@ -17,6 +17,7 @@ public class EhDeobfuscationCore(IEhDeobfuscationProcessor processor, IEhLogger 
         ModuleDefMD module = ModuleDefMD.Load("Assembly-CSharp.dll");
         processor.Process(module);
         module.Write("Assembly-CSharp-Deobfuscated.dll");
-        Console.ReadLine();
+        logger.Log("Deobfuscation finished\nPress any key to exit");
+        Console.ReadKey();
     }
 }

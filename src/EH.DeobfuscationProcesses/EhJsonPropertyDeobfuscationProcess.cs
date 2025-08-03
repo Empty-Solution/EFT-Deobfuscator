@@ -4,7 +4,7 @@ using dnlib.DotNet;
 using EH.BaseDeobfuscationProcess;
 using EH.DeobfuscationCore.Abstraction;
 using EH.Logging.Abstraction;
-using EH.StringValidationProviding.Abstraction;
+using EH.StringValidation.Abstraction;
 using System.Linq;
 namespace EH.ClassDeobfuscationProcess;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "sonProperty")]

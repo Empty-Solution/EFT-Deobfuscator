@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EH.BaseDeobfuscationProcess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EH.Merging", "EH.Merging\EH.Merging.csproj", "{3C4DE8E9-5229-48DB-A67C-747A6A8F35C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EH.StringValidationProviding.Abstraction", "EH.StringValidationProviding.Abstraction\EH.StringValidationProviding.Abstraction.csproj", "{F706876E-9A4C-4A1F-8DEC-1EDDE8B44F09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EH.StringValidation.Abstraction", "EH.StringValidation.Abstraction\EH.StringValidation.Abstraction.csproj", "{F706876E-9A4C-4A1F-8DEC-1EDDE8B44F09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EH.StringValidation", "EH.StringValidation\EH.StringValidation.csproj", "{644BA52B-B56C-4577-86A6-EDA6273CAEB3}"
 EndProject

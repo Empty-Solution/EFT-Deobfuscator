@@ -1,6 +1,6 @@
 ﻿using DI.Services.Scheme.Abstraction;
 using DI.Services.Scheme.Attributes;
-using EH.StringValidationProviding.Abstraction;
+using EH.StringValidation.Abstraction;
 namespace EH.StringValidation;
 [DiDescript(Order = 0, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhStringValidator))]
 public class EhUnicodeStringValidator : IEhStringValidator
