@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="bs.core" Version="1.0.5"/>
+        <PackageReference Include="BS.Core.Abstraction" Version="1.0.5"/>
+        <PackageReference Include="BS.Initialize.Abstraction" Version="1.0.5"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\EH.Logging.Abstraction\EH.Logging.Abstraction.csproj"/>
+    </ItemGroup>
+
+</Project>

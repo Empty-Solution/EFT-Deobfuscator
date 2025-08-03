@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <PackageReference Include="BS.Initialize.Abstraction" Version="1.0.5"/>
+        <PackageReference Include="DI.Engine.Attributes" Version="1.0.5"/>
+        <PackageReference Include="di.services.scheme.attributes" Version="1.0.5"/>
+        <PackageReference Include="dnlib" Version="4.5.0"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\EH.DeobfuscationCore.Abstraction\EH.DeobfuscationCore.Abstraction.csproj"/>
+        <ProjectReference Include="..\EH.Logging.Abstraction\EH.Logging.Abstraction.csproj"/>
+    </ItemGroup>
+</Project>
