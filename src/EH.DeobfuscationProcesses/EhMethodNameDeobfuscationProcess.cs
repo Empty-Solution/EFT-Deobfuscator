@@ -5,7 +5,7 @@ using EH.BaseDeobfuscationProcess;
 using EH.DeobfuscationCore.Abstraction;
 using EH.Logging.Abstraction;
 using EH.StringValidation.Abstraction;
-namespace EH.ClassDeobfuscationProcess;
+namespace EH.DeobfuscationProcesses;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "MethodName")]
 public class EhMethodNameDeobfuscationProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
 {

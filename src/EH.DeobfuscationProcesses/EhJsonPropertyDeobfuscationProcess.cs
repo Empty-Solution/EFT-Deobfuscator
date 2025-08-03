@@ -6,7 +6,7 @@ using EH.DeobfuscationCore.Abstraction;
 using EH.Logging.Abstraction;
 using EH.StringValidation.Abstraction;
 using System.Linq;
-namespace EH.ClassDeobfuscationProcess;
+namespace EH.DeobfuscationProcesses;
 [DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcess), Key = "sonProperty")]
 public class EhJsonPropertyDeobfuscationProcess(IEhStringValidator stringValidator, IEhLogger logger) : EhBaseDeobfuscationProcess
 {
