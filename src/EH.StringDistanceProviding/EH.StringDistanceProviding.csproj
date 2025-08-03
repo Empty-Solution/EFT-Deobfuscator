@@ -5,8 +5,6 @@
         <ProjectReference Include="..\EH.Logging.Abstraction\EH.Logging.Abstraction.csproj"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="BS.Initialize.Abstraction" Version="1.0.5"/>
-        <PackageReference Include="DI.Engine.Attributes" Version="1.0.5"/>
-        <PackageReference Include="di.services.scheme.attributes" Version="1.0.5"/>
+        <ProjectReference Include="..\EH.StringDistanceProviding.Abstraction\EH.StringDistanceProviding.Abstraction.csproj"/>
     </ItemGroup>
 </Project>

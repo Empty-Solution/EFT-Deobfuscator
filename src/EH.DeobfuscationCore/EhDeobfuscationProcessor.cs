@@ -8,7 +8,7 @@ using dnlib.DotNet;
 using EH.DeobfuscationCore.Abstraction;
 using System.Collections.Generic;
 namespace EH.DeobfuscationCore;
-[DiDescript(Order = 1, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcessor))]
+[DiDescript(Order = 5, Lifetime = EDiServiceLifetime.Singleton, ServiceType = typeof(IEhDeobfuscationProcessor))]
 public class EhDeobfuscationProcessor(
     [DiParameter(IgnoreKeys = true, ServiceEquals = EDiServiceEquals.SubClassOrAssignableOrEquals)]
     IEnumerable<IEhDeobfuscationProcess> deobfuscationProcesses) : IEhDeobfuscationProcessor

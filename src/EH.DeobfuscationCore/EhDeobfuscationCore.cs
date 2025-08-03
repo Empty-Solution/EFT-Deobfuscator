@@ -8,7 +8,7 @@ using System;
 [assembly: Di]
 [module: Di]
 namespace EH.DeobfuscationCore;
-[DiDescript(Order = 2, Lifetime = EDiServiceLifetime.Singleton)]
+[DiDescript(Order = 10, Lifetime = EDiServiceLifetime.Singleton)]
 public class EhDeobfuscationCore(IEhDeobfuscationProcessor processor, IEhLogger logger) : IBsInitializable
 {
     public void Initialize()

@@ -1,7 +1,10 @@
-﻿using EH.DistanceProviding.Abstraction;
+﻿using DI.Services.Scheme.Abstraction;
+using DI.Services.Scheme.Attributes;
+using EH.StringDistanceProviding.Abstraction;
 using System;
-namespace EH.DistanceProviding;
-public class EhLevenshteinDistanceProvider : IEhDistanceProvider
+namespace EH.StringDistanceProviding;
+[DiDescript(Order = 0, Lifetime = EDiServiceLifetime.Singleton)]
+public class EhLevenshteinStringDistanceProvider : IEhStringDistanceProvider
 {
     public int GetDistance(string from, string to)
     {
