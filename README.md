@@ -1,35 +1,86 @@
-EFT Renamer and String decryptor.
+﻿# EH Deobfuscator
 
-Example output (cutted cuz full output ~10k lines):
+**EH Deobfuscator** is a .NET assembly deobfuscation tool written in C# using dnlib for IL code manipulation.
+
+## 🚀 Features
+
+- **String Decryption**: Automatically detect and decrypt obfuscated strings in .NET assemblies
+- **Modular Architecture**: Plugin system for various deobfuscation processes
+- **Dependency Injection**: DI container for managing dependencies
+- **Logging**: Detailed logging of the deobfuscation process
+- **Extensibility**: Easy addition of new deobfuscation processes
+
+## 🛠 Technologies
+
+- **.NET Framework 4.8**
+- **C# 14.0**
+- **dnlib** - for working with .NET metadata
+- **Dependency Injection** - for application architecture
+
+## 📁 Project Structure
+
 ```
-[ ~ ] EhLogger initialized
-[ ~ ] EhDeobfuscationCore initialized
-[ ~ ] Renaming ? to _restProcessor [Token: 0x04003CB1]
-[ ~ ] Renaming ? to _queue [Token: 0x04003DA2]
-[ ~ ] Renaming ? to _context [Token: 0x04003E74]
-[ ~ ] Renaming ? to ChangeSightsMode [Token: 0x040090BB]
-[ ~ ] Renaming ? to LauncherRangeStatePacket [Token: 0x040090BC]
-[ ~ ] Renaming ? to FlareShotInfo [Token: 0x040090BE]
-[ ~ ] Renaming ? to RocketShotInfo [Token: 0x040090BF]
-[ ~ ] Renaming ? to LauncherReloadInfo [Token: 0x040090C0]
-[ ~ ] Renaming ? to EnableInventoryPacket [Token: 0x040090C1]
-[ ~ ] Renaming ? to HideWeaponPacket [Token: 0x040090C2]
-[ ~ ] Renaming ? to ReloadWithAmmoPacket [Token: 0x040090C5]
-[ ~ ] Renaming ? to ReloadBarrelsPacket [Token: 0x040090C6]
-[ ~ ] Renaming ? to RadioTransmitterPacket [Token: 0x040090C9]
-[ ~ ] Renaming ? to CylinderMagStatusPacket [Token: 0x040090CB]
-[ ~ ] Renaming ? to RollCylinderPacket [Token: 0x040090CC]
-[ ~ ] Renaming ? to SetLeftStancePacket [Token: 0x040090D0]
-...
-[ ~ ] Renaming ? to WorkingStats [Token: 0x04012512]
-[ ~ ] Renaming ? to AvgWorkCpuLoad [Token: 0x0401252B]
-[ ~ ] Renaming ? to mColumns [Token: 0x04012774]
-[ ~ ] Renaming ? to mRows [Token: 0x04012775]
-[ ~ ] Renaming ? to _comparer [Token: 0x040127B3]
-[ ~ ] Renaming ? to CurPoint [Token: 0x06000383, Index: 3]
-[ ~ ] Renaming ? to Aiming [Token: 0x06000950, Index: 3]
-...
-[ ~ ] Decrypted string (_FramesY) [Token: 0x06015D6C]
-[ ~ ] Decrypted string ({0}.{1}.{2}) [Token: 0x06015D91]
-[ ~ ] Decrypted string (Version=) [Token: 0x06015D93]
+src/
+├── EH.Core/                              # Core application functionality
+├── EH.DeobfuscationCore/                # Deobfuscation system core
+├── EH.DeobfuscationCore.Abstraction/    # Abstractions for deobfuscation
+├── EH.DeobfuscationProcesses/           # Concrete deobfuscation processes
+├── EH.BaseDeobfuscationProcess/         # Base class for processes
+├── EH.Logging/                          # Logging system
+├── EH.Logging.Abstraction/              # Abstractions for logging
+├── EH.StringValidation/                 # String validation
+├── EH.StringValidation.Abstraction/     # Abstractions for validation
+└── EH.Merging/                          # Assembly merging
 ```
+
+## 🔧 Deobfuscation Processes
+
+### String Decryption
+- Automatically detects string decryption method calls
+- Replaces encrypted strings with decrypted ones
+- Logs all decryption operations with method tokens
+
+## 🚀 Usage
+
+1. Place the target assembly `Assembly-CSharp.dll` in the application directory
+2. Run the deobfuscator
+3. The system will automatically process the assembly, applying all available deobfuscation processes
+4. Check the logs to monitor the deobfuscation process
+
+## 📝 Logging
+
+The system maintains detailed logs of all operations:
+- Decrypted strings with their values
+- Processed method tokens
+- Errors and warnings during operation
+
+## ⚙️ Architecture
+
+The project is built on the principles of:
+- **Dependency Inversion** - using abstractions
+- **Single Responsibility** - each process performs one task
+- **Extensibility** - easy addition of new deobfuscation processes
+- **Configurability** - using attributes for DI configuration
+
+## 🤝 Development
+
+To add a new deobfuscation process:
+1. Inherit from `EhBaseDeobfuscationProcess`
+2. Override the `Deobfuscate` method
+3. Add the `DiDescript` attribute for registration in the DI container
+
+```csharp
+[DiDescript(Order = 3, Lifetime = EDiServiceLifetime.Singleton, 
+    ServiceType = typeof(IEhDeobfuscationProcess), Key = "YourProcess")]
+public class YourDeobfuscationProcess : EhBaseDeobfuscationProcess
+{
+    protected override void Deobfuscate(ModuleDefMD module)
+    {
+        // Your deobfuscation logic here
+    }
+}
+```
+
+## 📄 License
+
+See the [LICENSE](LICENSE) file for license rights and limitations.
